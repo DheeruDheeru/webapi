@@ -4,7 +4,7 @@ SELECT NEWID()  AS GUID;
 
 Create table PaymentDetails
 (
-	ID uniqueidentifier not null,
+	ID uniqueidentifier not null default NEWID(),
 	CardOwner nvarchar(100) not null,
 	CardNumber nvarchar(16) not null,
 	ExpiryDate nvarchar(5) not null,

@@ -10,7 +10,7 @@ using webapi.Model;
 namespace webapi.Migrations
 {
     [DbContext(typeof(PaymentDbContext))]
-    [Migration("20200306113227_Payment")]
+    [Migration("20200306114630_Payment")]
     partial class Payment
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
