@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace webapi.Migrations
@@ -11,8 +11,7 @@ namespace webapi.Migrations
                 name: "PaymentDetails",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ID = table.Column<Guid>(nullable: false),
                     CardOwner = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     CardNumber = table.Column<string>(type: "nvarchar(16)", nullable: false),
                     ExpiryDate = table.Column<string>(type: "nvarchar(5)", nullable: false),

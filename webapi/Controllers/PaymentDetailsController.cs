@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webapi.Model;
 
-namespace webapi
+namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -29,7 +29,7 @@ namespace webapi
 
         // GET: api/PaymentDetails/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPaymentDetail([FromRoute] int id)
+        public async Task<IActionResult> GetPaymentDetail([FromRoute] Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace webapi
 
         // PUT: api/PaymentDetails/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPaymentDetail([FromRoute] int id, [FromBody] PaymentDetail paymentDetail)
+        public async Task<IActionResult> PutPaymentDetail([FromRoute] Guid id, [FromBody] PaymentDetail paymentDetail)
         {
             if (!ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace webapi
 
         // DELETE: api/PaymentDetails/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePaymentDetail([FromRoute] int id)
+        public async Task<IActionResult> DeletePaymentDetail([FromRoute] Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace webapi
             return Ok(paymentDetail);
         }
 
-        private bool PaymentDetailExists(int id)
+        private bool PaymentDetailExists(Guid id)
         {
             return _context.PaymentDetails.Any(e => e.ID == id);
         }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace webapi.Model
@@ -6,7 +7,7 @@ namespace webapi.Model
     public class PaymentDetail
     {
         [Key]
-        public int ID { get; set; }
+        public Guid ID { get; set; }
         [Required]
         [Column(TypeName ="nvarchar(100)")]
         public string CardOwner { get; set; }
