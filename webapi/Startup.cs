@@ -49,6 +49,7 @@ namespace webapi
 
             app.UseHttpsRedirection();
             app.UseCors(x => x.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+
             app.UseMvc();
         }
     }
