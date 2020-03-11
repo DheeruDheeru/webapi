@@ -13,9 +13,9 @@ Create table PaymentDetails
 )
 
 insert into PaymentDetails
-(ID,CardOwner,CardNumber,ExpiryDate,CVV)
+(CardOwner,CardNumber,ExpiryDate,CVV)
 values
-(NEWID(),'Mohit Chandra Joshi','1343267890123456','12/26','143'),
-(NEWID(),'Chandra Datt Pandey','0987654321123456','12/22','565')
+('Mohit Chandra Joshi','1343267890123456','12/26','143'),
+('Chandra Datt Pandey','0987654321123456','12/22','565')
 
 select * from PaymentDetails;
